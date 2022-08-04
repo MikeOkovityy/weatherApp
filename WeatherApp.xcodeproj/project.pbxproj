@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE15BC2A289C3ABB00870B0F /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BC29289C3ABB00870B0F /* DailyWeather.swift */; };
+		CE15BC2C289C3E7E00870B0F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15BC2B289C3E7E00870B0F /* NetworkService.swift */; };
 		CE824179289BDD13008DE808 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE824178289BDD13008DE808 /* WeatherViewController.swift */; };
 		CE82417B289BDD23008DE808 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82417A289BDD23008DE808 /* CurrentWeather.swift */; };
 		CE9A5F71289BDB7F00E3AB82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A5F70289BDB7F00E3AB82 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE15BC29289C3ABB00870B0F /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
+		CE15BC2B289C3E7E00870B0F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE824178289BDD13008DE808 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE82417A289BDD23008DE808 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		CE9A5F6D289BDB7F00E3AB82 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +68,9 @@
 				CE9A5F72289BDB7F00E3AB82 /* SceneDelegate.swift */,
 				CE9A5F76289BDB7F00E3AB82 /* Main.storyboard */,
 				CE824178289BDD13008DE808 /* WeatherViewController.swift */,
+				CE15BC29289C3ABB00870B0F /* DailyWeather.swift */,
 				CE9A5F74289BDB7F00E3AB82 /* ViewController.swift */,
+				CE15BC2B289C3E7E00870B0F /* NetworkService.swift */,
 				CE82417A289BDD23008DE808 /* CurrentWeather.swift */,
 				CE9A5F79289BDB8200E3AB82 /* Assets.xcassets */,
 				CE9A5F7B289BDB8200E3AB82 /* LaunchScreen.storyboard */,
@@ -146,6 +152,8 @@
 			files = (
 				CE9A5F75289BDB7F00E3AB82 /* ViewController.swift in Sources */,
 				CE82417B289BDD23008DE808 /* CurrentWeather.swift in Sources */,
+				CE15BC2C289C3E7E00870B0F /* NetworkService.swift in Sources */,
+				CE15BC2A289C3ABB00870B0F /* DailyWeather.swift in Sources */,
 				CE824179289BDD13008DE808 /* WeatherViewController.swift in Sources */,
 				CE9A5F71289BDB7F00E3AB82 /* AppDelegate.swift in Sources */,
 				CE9A5F73289BDB7F00E3AB82 /* SceneDelegate.swift in Sources */,

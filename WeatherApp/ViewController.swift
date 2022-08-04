@@ -15,6 +15,7 @@ class StartViewController: UIViewController {
     }
     
     var currenweather: CurrentWeather?
+    let networkService: NetworkService = NetworkService()
     
     @IBOutlet weak var cityTextField: UITextField!
     
@@ -35,41 +36,18 @@ class StartViewController: UIViewController {
     
     
     func fetchWeather(city: String) {
-        let apiKey = "4f594b6caca6beb3a15d373071f8751a"
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)&units=metric") else { return }
-        var reguest = URLRequest(url: url)
-        reguest.httpMethod = "GET"
-        
-        
-        let session = URLSession.shared
-        let task = session.dataTask(with: reguest) { data, responce, error in
-            if let error = error {
-                print(error)
-                // make allert: oshibka zaprosa, "error" - chtoto poshlo ne tak
-            } else if let data = data, let responce = responce  as? HTTPURLResponse{
-                
-                if responce.statusCode == 200 {
-                    let weatherDate: CurrentWeather
-                    do {
-                        
-                        weatherDate = try JSONDecoder().decode(CurrentWeather.self, from: data)
-                        self.currenweather = weatherDate
-                        DispatchQueue.main.async {
-                            self.showWeather()
-                        }
-                        print(weatherDate.name)
-                    } catch let errorDecode {
-                        print(errorDecode)
-                    }
-                } else {
-                    // make Allert: necorrectno vveden gorod
+        networkService.fetchWeather(city: city) { weather, error in
+            if let weather = weather {
+                self.currenweather = weather
+                DispatchQueue.main.async {
+                    self.showWeather()
                 }
-                
-            }
+            } else {
+                //show Allert
         }
-        
-        task.resume()
     }
+        
+}
     
     func showWeather() {
         performSegue(withIdentifier: "showWeather", sender: self)
