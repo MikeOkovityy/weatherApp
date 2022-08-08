@@ -19,8 +19,6 @@ class StartViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: UITextField!
     
-    
-    
     @IBAction func searchButton(_ sender: Any) {
         guard let textField = cityTextField.text else { return }
         fetchWeather(city: textField)
@@ -33,8 +31,6 @@ class StartViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
-    
     func fetchWeather(city: String) {
         networkService.fetchWeather(city: city) { weather, error in
             if let weather = weather {
@@ -43,10 +39,9 @@ class StartViewController: UIViewController {
                     self.showWeather()
                 }
             } else {
-                //show Allert
+                // allert controler
+            }
         }
-    }
-        
 }
     
     func showWeather() {

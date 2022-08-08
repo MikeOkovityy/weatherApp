@@ -12,19 +12,16 @@ struct DailyWeather: Codable {
     let hourly: [Hourly]
     let daily: [Daily]
 }
-
 struct Hourly: Codable {
     let dt: Double
     let temp: Double
     let weather: [WeatherDicrription]
 }
-
 struct Daily: Codable {
     let dt: Double
     let temp: DailyTemp
     let weather: [WeatherDicrription]
 }
-
 struct DailyTemp: Codable {
     let min: Double
     let max: Double

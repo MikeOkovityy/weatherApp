@@ -19,12 +19,10 @@ struct CurrentWeather: Codable {
     let cod: Int
 }
 
-
 struct Coordinates: Codable {
     let lon: Double
     let lat: Double
 }
-
 
 struct WeatherDicrription: Codable {
     let id: Int
@@ -34,7 +32,6 @@ struct WeatherDicrription: Codable {
 }
 
 struct TempInfo: Codable {
-    
     let temp: Double
     let feels_like: Double
     let temp_min: Double
@@ -43,7 +40,6 @@ struct TempInfo: Codable {
     let humidity: Int
 }
 
-  
 struct WindParameters: Codable {
     let speed: Double
     let deg: Int

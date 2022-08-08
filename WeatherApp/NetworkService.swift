@@ -23,6 +23,7 @@ class NetworkService {
             } else if let data = data, let responce = responce  as? HTTPURLResponse, responce.statusCode == 200 {
                     do {
                       let  weatherData = try JSONDecoder().decode(CurrentWeather.self, from: data)
+             
                         completion(weatherData, nil)
                     } catch let decodeErrore {
                         completion(nil, decodeErrore)

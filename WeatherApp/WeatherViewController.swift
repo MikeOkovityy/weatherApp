@@ -16,7 +16,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var weatherDiscription: UILabel!
     @IBOutlet weak var minMaxTemperaturaLabel: UILabel!
     
-    
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var visabilityLabel: UILabel!
@@ -37,10 +36,9 @@ class WeatherViewController: UIViewController {
         guard let currentWeather = currentWeather else { return }
     
         cityNameLabel.text = currentWeather.name
-        temperaturaLabel.text = "\(currentWeather.main.temp)°"
+        temperaturaLabel.text = "\(round(currentWeather.main.temp))°"
         weatherDiscription.text = currentWeather.weather[0].description
-        minMaxTemperaturaLabel.text = "min   \(currentWeather.main.temp_min)° max   \(currentWeather.main.temp_max)°"
-        
+        minMaxTemperaturaLabel.text = "min   \(round(currentWeather.main.temp_min))° max   \(round(currentWeather.main.temp_max))°"
         
         humidityLabel.text = "\(currentWeather.main.humidity)%"
         pressureLabel.text = "\(currentWeather.main.pressure)mPa"
