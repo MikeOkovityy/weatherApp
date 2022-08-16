@@ -10,6 +10,7 @@ import UIKit
 class WeatherViewController: UIViewController {
     
     var currentWeather: CurrentWeather?
+    let networkManager = NetworkService()
     
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperaturaLabel: UILabel!
@@ -36,7 +37,7 @@ class WeatherViewController: UIViewController {
         guard let currentWeather = currentWeather else { return }
     
         cityNameLabel.text = currentWeather.name
-        temperaturaLabel.text = "\(round(currentWeather.main.temp))°"
+        temperaturaLabel.text = String(format:"%.1f",currentWeather.main.temp)
         weatherDiscription.text = currentWeather.weather[0].description
         minMaxTemperaturaLabel.text = "min   \(round(currentWeather.main.temp_min))° max   \(round(currentWeather.main.temp_max))°"
         
@@ -46,5 +47,16 @@ class WeatherViewController: UIViewController {
         feelsLikeLabel.text = "\(currentWeather.main.feels_like)"
     }
     
-
+    func fetchDailyWeather() {
+        guard let currentWeather = currentWeather else {
+            return
+        }
+        networkManager.fetchDailyWeather(lat: currentWeather.coord.lat, lon: currentWeather.coord.lon) {weather, error in
+            if let weather = weather {
+                print("Success")
+            } else {
+                print("error")
+            }
+        }
+    }
 }
